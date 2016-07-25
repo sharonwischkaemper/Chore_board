@@ -12,35 +12,51 @@
 
 
 <body>
-    <h1 id="titleHead">To do List</h1>
 
-    <div class="container-fluid">
+
+    <div class="container-fluid" ng-controller="MainController as main">
+        <h1 id="titleHead">Chore Board </h1>
+
         <div class="row">
             <div class="col-lg-4"></div>
-            <div ng-controller="MainController as main" class="col-lg-4">
+           <form ng-submit="main.addItem()" name="formX">
+                <div class="col-lg-4">
                 <div class="input-group">
-                    <span class="input-group-btn">
-                            <button ng-click="main.addItem()" class="btn btn-info" >Go!</button>
-                        </span>
-                    <input ng-model="main.newItem"  class="form-control" placeholder="Add item . . ." >
+                    <span class="input-group-btn "><button class="btn btn-info">Add</button></span>
+                    <input id="inputField" ng-model="main.newItem" class="form-control" placeholder="Add item . . ." required>
                 </div>
+
+           </form>
+         
 
                 <ul class="list-group">
                     <li ng-repeat="toDo in main.toDos" class="list-group-item">
-                        <a ng-click="main.removeItem(index)" id="removeBtn"><b>remove</b></a>
-                        <a ng-click="main.editItem(index)" class="button" id="editBtn"><b>Edit</b></a> {{toDo}}
+                        <div class="checkbox">
+                            <a ng-click="main.removeItem(index)" id="removeBtn"><b>Remove</b></a>
+                            <label><input  id="display"  type="checkbox" name="packersOff" class="strikethrough" value="1"><span>{{toDo.title}}</span></label>
+
+
+
                     </li>
                 </ul>
+                </div>
 
                 <div class="col-lg-4">
-                    <button ng-click="main.clearAll()" class="btn btn-danger"><b>Clear All</b></button>
+                    <button ng-click="main.clearAll()" class="btn btn-danger" id="clearAllBtn"><b>Clear All</b></button>
                 </div>
 
 
             </div>
+            <!--contentDiv row-->
         </div>
-
+        <!--row-->
     </div>
+    <!---MainController->
+   
+
+<!---MainController->
+
+
 
 
 
@@ -59,8 +75,11 @@
         crossorigin="anonymous"></script>
     <script src="app.js "></script>
     <script src="Controllers/MainController.js "></script>
-
+    <!--<script src="ng_message.js "></script>-->
 
 </body>
 
 </html>
+
+<!--<a class="navbar-brand" href="https://github.com/sharonwischkaemper">
+        <img alt="Brand" src="https://github.com/favicon.ico">-->

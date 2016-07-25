@@ -35,12 +35,24 @@ navbar navbar-default{
 }
 
 body{
-    background-image: url('https://im1.shutterfly.com/ng/services/mediarender/THISLIFE/008094316320/media/11439669285/medium/1469435889/enhance') ;
+    background-image: url('https://im1.shutterfly.com/ng/services/mediarender/THISLIFE/008094316320/media/11439670922/large/1469435913/enhance') ;
     background-repeat: no-repeat;
     background-position: center top;
+    background-color: limegreen;
   
 
 }
-#R{
-   background-color:red;
+
+.strikethrough:checked + span{
+  text-decoration:line-through;
+  color:green;
+   
+}
+
+#clearAllBtn{
+    align-content: center;
+}
+
+#removeBtn{
+    color:red;
 }
