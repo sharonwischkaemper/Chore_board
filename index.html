@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html ng-app='MyApp'>
+
+<head>
+    <title>Weather App</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+
+
+</head>
+
+
+<body>
+    <h1 id="titleHead">To do List</h1>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-4">
+                RED
+            </div>
+            <div ng-controller="MainController as main" id="imag" class="col-lg-4">
+                <div class="input-group">
+                    <span class="input-group-btn">
+                            <button ng-click="main.addItem()" class="btn btn-info" >Go!</button>
+                        </span>
+                    <input ng-model="main.newItem"  class="form-control" placeholder="Add item . . ." >
+                </div>
+
+                <ul class="list-group">
+                    <li ng-repeat="toDo in main.toDos" class="list-group-item">
+                        <a ng-click="main.removeItem(index)" id="removeBtn"><b>remove</b></a>
+                        <a ng-click="main.editItem(index)" class="button" id="editBtn"><b>Edit</b></a> {{toDo}}
+                    </li>
+                </ul>
+
+                <div class="col-lg-4">
+                    <button ng-click="main.clearAll()" class="btn btn-danger"><b>Clear All</b></button>
+                </div>
+
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <!--TodoList row-->
+
+
+    <!--TodoList container-fluid-->
+
+
+    <!--MainContainer-->
+
+
+    <script src="https://code.jquery.com/jquery-1.9.1.js" integrity="sha256-e9gNBsAcA0DBuRWbm0oZfbiCyhjLrI6bmqAl5o+ZjUA=" crossorigin="anonymous"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+        crossorigin="anonymous"></script>
+    <script src="app.js "></script>
+    <script src="Controllers/MainController.js "></script>
+
+
+</body>
+
+</html>

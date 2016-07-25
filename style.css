@@ -1,0 +1,46 @@
+#removeToDo{
+    color: red;
+
+}
+
+#editToDo{
+    color: green ;
+  
+}
+
+#removeBtn{
+    color:red;
+}
+
+#editBtn{
+    color:green;
+    
+}
+#inputDiv{
+    padding-bottom: 100px;
+}
+
+navbar navbar-default{
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top:   0px;
+    margin-bottom: 0px;
+   
+}
+#titleHead{
+    font-size: 100px;
+    text-align: center;
+    font-family: cursive;
+
+}
+
+body{
+    background-image: url('https://im1.shutterfly.com/ng/services/mediarender/THISLIFE/008094316320/media/11439669285/medium/1469435889/enhance') ;
+    background-repeat: no-repeat;
+    background-position: center top;
+  
+
+}
+#R{
+   background-color:red;
+}
