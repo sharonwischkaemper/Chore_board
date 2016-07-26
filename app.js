@@ -1,1 +1,1 @@
-angular.module('MyApp',[]);
+angular.module('ChoreBoardApp',[]);

@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html ng-app='MyApp'>
+<html ng-app='ChoreBoardApp'>
 
 <head>
-    <title>Weather App</title>
+    <title>Chore Board</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
         crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
@@ -14,59 +14,57 @@
 <body>
 
 
+
+
+
+
     <div class="container-fluid" ng-controller="MainController as main">
-        <h1 id="titleHead">Chore Board </h1>
+        <h1 id="titleHead">Chore Board</h1>
 
-        <div class="row">
+         <div class="row">
             <div class="col-lg-4"></div>
-           <form ng-submit="main.addItem()" name="formX">
+            <form ng-submit="main.addItem()" name="formX">
                 <div class="col-lg-4">
-                <div class="input-group">
-                    <span class="input-group-btn "><button class="btn btn-info">Add</button></span>
-                    <input id="inputField" ng-model="main.newItem" class="form-control" placeholder="Add item . . ." required>
-                </div>
+                    <div class="input-group">
+                        <span class="input-group-btn "><button class="btn btn-info">Add</button></span>
+                        <input ng-model="main.newItem" class="form-control" placeholder="Add item . . ." required>
+                    </div>
 
-           </form>
-         
-
-                <ul class="list-group">
-                    <li ng-repeat="toDo in main.toDos" class="list-group-item">
-                        <div class="checkbox">
-                            <a ng-click="main.removeItem(index)" id="removeBtn"><b>Remove</b></a>
-                            <label><input  id="display"  type="checkbox" name="packersOff" class="strikethrough" value="1"><span>{{toDo.title}}</span></label>
+            </form>
 
 
+            <ul class="list-group">
+                <li ng-repeat="toDo in main.toDos" class="list-group-item">
+                    <div class="checkbox">
+                        <a ng-click="main.removeItem(index)" id="removeBtn"><b>Remove</b></a>
+                         <label><input  id="display"  type="checkbox"  class="strikethrough"><span>{{toDo.title}}</span></label>
+                 </li>
+            </ul>
+                    </div><!--check box-->
 
-                    </li>
-                </ul>
-                </div>
-
-                <div class="col-lg-4">
-                    <button ng-click="main.clearAll()" class="btn btn-danger" id="clearAllBtn"><b>Clear All</b></button>
-                </div>
-
-
+            <div class="col-lg-4">
+                <button ng-click="main.clearAll()" class="btn btn-danger" id="clearAllBtn"><b>Clear All</b></button>
             </div>
-            <!--contentDiv row-->
-        </div>
-        <!--row-->
-    </div>
-    <!---MainController->
-   
+            </div>
+        </div><!--contentDiv row-->
+       
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2"></div>
+                <div class="col-lg-2"></div>
+                <div class="col-lg-4">
+                    <img id="imgHeader" src="https://im1.shutterfly.com/ng/services/mediarender/THISLIFE/008094316320/media/10639650586/medium/1437616679/enhance">
+                    <h1 style="font-family: cursive; font-style: italic;" >Chores? I like chores!They facinate me. I can sit and look at them fo rhours....</h1>
+                </div>
+                <div class="col-lg-2"></div>
+                <div class="col-lg-2"></div>
+            
+            </div><!--contentDiv row-->
 
-<!---MainController->
+        </div> <!--contentDiv-->
 
+    </div> <!--MainContainer-->
 
-
-
-
-    <!--TodoList row-->
-
-
-    <!--TodoList container-fluid-->
-
-
-    <!--MainContainer-->
 
 
     <script src="https://code.jquery.com/jquery-1.9.1.js" integrity="sha256-e9gNBsAcA0DBuRWbm0oZfbiCyhjLrI6bmqAl5o+ZjUA=" crossorigin="anonymous"></script>
@@ -75,7 +73,7 @@
         crossorigin="anonymous"></script>
     <script src="app.js "></script>
     <script src="Controllers/MainController.js "></script>
-    <!--<script src="ng_message.js "></script>-->
+
 
 </body>
 
