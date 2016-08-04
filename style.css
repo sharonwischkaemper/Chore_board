@@ -9,6 +9,13 @@
 
 }
 
+#smallHeader{
+ font-size: 30px;
+ font-family: cursive;
+ color: black;
+
+}
+
 body{
     background-image: url('https://im1.shutterfly.com/ng/services/mediarender/THISLIFE/008094316320/media/11439670922/large/1469435913/enhance') ;
     background-repeat: no-repeat;
@@ -24,5 +31,23 @@ body{
 #imgHeader{
     height: 400px;
     width: 300px;
-};
+   
+}
 
+#deleteChore{
+color: red;
+}
+
+#titleBoard{
+    text-align: center;
+  font-size: 40px;
+}
+
+#allBoards{
+    font-size: 50px;
+     font-family: cursive;
+     text-align: center;
+    
+}
+ 
+ 

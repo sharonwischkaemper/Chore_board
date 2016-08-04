@@ -13,57 +13,73 @@
 
 <body>
 
+    <nav class="navbar navbar-inverse">
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a href="https://github.com/sharonwischkaemper/Chore_board_app">This Project GitHub</a></li>
+
+              
+                    </li>
+                </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </nav>
 
 
 
 
 
-    <div class="container-fluid" ng-controller="MainController as main">
-        <h1 id="titleHead">Chore Board</h1>
 
-         <div class="row">
-            <div class="col-lg-4"></div>
-            <form ng-submit="main.addItem()" name="formX">
-                <div class="col-lg-4">
+    <div class="container-fluid">
+
+        <div class="page-header">
+            <h1 id="titleHead">Chores</h1>
+        </div>
+    </div>
+
+<div class="container-fluid" ng-controller="MainController as main">
+        <div class="row">
+            <div class="col-lg-2">
+                <h3><b>Create A Chore Board</b></h3>
+                <form ng-submit="main.createNewBoard()" name="BoaredForm">
                     <div class="input-group">
-                        <span class="input-group-btn "><button class="btn btn-info">Add</button></span>
-                        <input ng-model="main.newItem" class="form-control" placeholder="Add item . . ." required>
+                        <span class="input-group-btn "><button type="submit" class="btn btn-info">Create</button></span>
+                        <input ng-model="main.createBoard" class="form-control" placeholder="name board. . ." required>
                     </div>
 
-            </form>
-
-
-            <ul class="list-group">
-                <li ng-repeat="toDo in main.toDos" class="list-group-item">
-                    <div class="checkbox">
-                        <a ng-click="main.removeItem(index)" id="removeBtn"><b>Remove</b></a>
-                         <label><input  id="display"  type="checkbox"  class="strikethrough"><span>{{toDo.title}}</span></label>
-                 </li>
-            </ul>
-                    </div><!--check box-->
-
-            <div class="col-lg-4">
-                <button ng-click="main.clearAll()" class="btn btn-danger" id="clearAllBtn"><b>Clear All</b></button>
+                </form>
             </div>
-            </div>
-        </div><!--contentDiv row-->
-       
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-2"></div>
-                <div class="col-lg-2"></div>
-                <div class="col-lg-4">
-                    <img id="imgHeader" src="https://im1.shutterfly.com/ng/services/mediarender/THISLIFE/008094316320/media/10639650586/medium/1437616679/enhance">
-                    <h1 style="font-family: cursive; font-style: italic;" >Chores? I like chores!They facinate me. I can sit and look at them fo rhours....</h1>
+
+
+            <div class="col-lg-2"></div>
+
+            <!--Chore Boards-->
+
+            <div class="col-lg-6">
+                <h1 id="allBoards"><b>All Board's</b></h1>
+                <div class="well" id="choreBoard" ng-repeat="board in main.boards">
+                    <!--clears current board-->
+                    <td-todo-board board="board"></td-todo-board>
+                    <button class="btn btn-danger btn-block" ng-click="main.removeBoard(index)">Delete This Board</button>
+
                 </div>
-                <div class="col-lg-2"></div>
-                <div class="col-lg-2"></div>
-            
-            </div><!--contentDiv row-->
+            </div>
+            <div class="col-lg-2"></div>
+        </div>
+       
 
-        </div> <!--contentDiv-->
+                <button ng-click="main.clearAllBroards()" class="btn btn-danger" id="clearAllBtn"><b>Clear All Boards</b></button>
 
-    </div> <!--MainContainer-->
+          
+
+
+      
+    </div>
+    <!--ROW-->
+    </div>
+    <!--CONTAINER-FLUID-->
 
 
 
@@ -73,11 +89,9 @@
         crossorigin="anonymous"></script>
     <script src="app.js "></script>
     <script src="Controllers/MainController.js "></script>
-
+    <script src="directives/tdTodoBoard/tdTodoBoard.js"></script>
 
 </body>
 
 </html>
 
-<!--<a class="navbar-brand" href="https://github.com/sharonwischkaemper">
-        <img alt="Brand" src="https://github.com/favicon.ico">-->

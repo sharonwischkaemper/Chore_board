@@ -15,47 +15,40 @@ function MainController($scope) {
 
 
 
-    vm.toDos = [];
- 
+    vm.boards = [];
   
-    vm.addItem = function () {
+    vm.createNewBoard = function () {
         
         /*dont allow duplicat items to bo added*/
-        var preExisting = vm.toDos.find(function(todo){ 
-            return todo.title === vm.newItem;
+        var preExisting = vm.boards.find(function(board){ 
+            return board === vm.createBoard;
         });
         var isPreExisting = typeof(preExisting) !== 'undefined';
-            if (!$scope.formX.$valid || isPreExisting) {
+            if (!$scope.BoaredForm.$valid || isPreExisting) {
             /*if item has already been added show alert message to user*/
                 alert('YOU CANNOT ADD DUPLICAT CHORES TO THE BOARED!');
          }else {
            
            /*else add the item to the boared*/
-            vm.toDos.push({ title: vm.newItem });
+            vm.boards.push(vm.createBoard );
            
             /*clear the input field*/
-            vm.newItem = " ";
+            vm.createBoard = " ";
         }
      };
    
    
     /*delete chore*/
-    vm.removeItem = function (index) {
-        vm.toDos.splice(index, 1);
+    vm.removeBoard = function(index) {
+        vm.boards.splice(index, 1);
     };
 
-    vm.clearAll = function () {
-        vm.toDos.length = 0;
-    }
-};
+//     vm. = function () {
+//         vm.createBoard.length = 0;
+//     };
 
+    vm.clearAllBroards = function (){
+        vm.boards.length = 0;
+};          
 
-
-
-
-
-
-
-
-
-
+}
