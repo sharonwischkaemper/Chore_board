@@ -32,7 +32,7 @@ function MainController($scope) {
         var isPreExisting = typeof(preExisting) !== 'undefined';
             if (!$scope.BoaredForm.$valid || isPreExisting) {
             /*if item has already been added show alert message to user*/
-                alert('YOU CANNOT ADD DUPLICAT CHORES TO THE BOARED!');
+                alert('THIS BOARD ALREADY EXISTS!!');
          }else {
            
            /*else add the item to the boared*/
@@ -56,5 +56,7 @@ function MainController($scope) {
     vm.clearAllBroards = function (){
         vm.boards.length = 0;
 };          
+
+
 
 }
