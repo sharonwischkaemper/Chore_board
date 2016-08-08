@@ -2,17 +2,16 @@
     color: red;
 }
 
-#titleHead{
+#title{
     font-size: 100px;
     text-align: center;
     font-family: cursive;
-
 }
 
 #smallHeader{
- font-size: 30px;
- font-family: cursive;
- color: black;
+    font-size: 30px;
+    font-family: cursive;
+    color: black;
 
 }
 
@@ -20,34 +19,38 @@ body{
     background-image: url('https://im1.shutterfly.com/ng/services/mediarender/THISLIFE/008094316320/media/11439670922/large/1469435913/enhance') ;
     background-repeat: no-repeat;
     background-position: center top;
-    background-color: limegreen;
-}
-
-.strikethrough:checked + span{
-  text-decoration:line-through;
-  color:green;
-}
-
-#imgHeader{
-    height: 400px;
-    width: 300px;
    
 }
 
+.strikethrough:checked + span{
+    text-decoration:line-through;
+    color:green;
+}
+
+
 #deleteChore{
-color: red;
+    color: red;
 }
 
-#titleBoard{
-    text-align: center;
-  font-size: 40px;
+
+#clearAllLink{
+    font-size: 40px;
+    color:red;
+    font-family: cursive;
+    font-style: italic;
+}
+#titleCreateChoreBoard{
+    font-size: 40px;
+    font-family: cursive;
+    font-style: italic;
 }
 
-#allBoards{
-    font-size: 50px;
-     font-family: cursive;
-     text-align: center;
-    
+#titleAllBoards{
+    font-size: 40px;
+    font-family: cursive;
+    font-style: italic;
 }
- 
- 
+
+#headerDiv{
+margin: 0px;
+}

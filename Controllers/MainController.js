@@ -19,6 +19,12 @@ function MainController($scope) {
   
     vm.createNewBoard = function () {
         
+          /*make sure the boared has a title*/
+        if(!vm.createBoard || vm.createBoard.trim().length < 1){
+            alert('You must supply a name for the board');
+            return;
+        }
+      
         /*dont allow duplicat items to bo added*/
         var preExisting = vm.boards.find(function(board){ 
             return board === vm.createBoard;
@@ -30,7 +36,7 @@ function MainController($scope) {
          }else {
            
            /*else add the item to the boared*/
-            vm.boards.push(vm.createBoard );
+            vm.boards.push(vm.createBoard);
            
             /*clear the input field*/
             vm.createBoard = " ";
@@ -40,7 +46,7 @@ function MainController($scope) {
    
     /*delete chore*/
     vm.removeBoard = function(index) {
-        vm.boards.splice(index, 1);
+        vm.boards.splice(index,1);
     };
 
 //     vm. = function () {

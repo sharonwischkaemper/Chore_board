@@ -12,15 +12,19 @@ function tdTodoBoard() {
             board: '='
         },
         link: function(scope, ele, attr) {
-            scope.todos = [];
-            scope.addItem = '';
+            scope.chores = [];
+            scope.addChore = '';
 
-            scope.addTodo = function() {
-                scope.todos.push({ title: scope.addItem });
-                scope.addItem = '';
+            scope.addChore = function() {
+                 if(!scope. ch ||scope.ch.trim().length < 1){
+            alert('You must supply a chore for the board');
+            return;
+        }
+                scope.chores.push(scope.ch );
+                scope.ch = '';
             }
-            scope.deleteTodo = function(index){
-                scope.todos.splice(index, 1);
+            scope.deleteChore = function(index){
+                scope.chores.splice(index,1);
  
        }
      }

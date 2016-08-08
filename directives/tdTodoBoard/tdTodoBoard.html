@@ -1,18 +1,20 @@
+
 <h2 id="titleBoard">
     <b>{{board | uppercase }}</b>
 </h2>
+
 <div class=" input-group">
-    <span class="input-group-btn "><button ng-click="addTodo()" class="btn btn-info btn-link"><b>Add</b></button></span>
-    <input ng-model="addItem" class="form-control" placeholder="Add item . . ." required>
+    <span class="input-group-btn "><button ng-click="addChore()" class="btn btn-info btn-link"><b>Add</b></button></span>
+    <input ng-model="ch" class="form-control" placeholder="Add item . . ." >
 
 </div>
 
 <div  id="inputToDo" >
     <ul class="list-group">
-        <li ng-repeat="todo in todos" class="list-group-item">
+        <li ng-repeat="chore in chores" class="list-group-item">
             <div class="checkbox">
-                <a ng-click="deleteTodo(index)" id="deleteChore" class="btn btn-danger btn-link"><b>Delete</b></a>
-                <label><input id="display"  type="checkbox"  class="strikethrough" ><span>{{todo.title}}</span></label>
+                <a ng-click="deleteChore($index)"  class="btn btn-danger btn-link"><b>Delete</b></a>
+                <label><input id="display"  type="checkbox"  class="strikethrough" ><span>{{chore}}</span></label>
         </li>
     </ul>
     </div>

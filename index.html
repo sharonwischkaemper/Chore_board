@@ -14,35 +14,25 @@
 <body>
 
     <nav class="navbar navbar-inverse">
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
+ <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li><a href="https://github.com/sharonwischkaemper/Chore_board_app">This Project GitHub</a></li>
-
-              
-                    </li>
+                 </li>
                 </ul>
         </div>
-        <!-- /.navbar-collapse -->
-    </nav>
+   </nav>
 
 
 
-
-
-
-    <div class="container-fluid">
-
-        <div class="page-header">
-            <h1 id="titleHead">Chores</h1>
-        </div>
-    </div>
+<h1 id="title">Chores</h1>
+     
+ 
 
 <div class="container-fluid" ng-controller="MainController as main">
         <div class="row">
             <div class="col-lg-2">
-                <h3><b>Create A Chore Board</b></h3>
+                <h3 id="titleCreateChoreBoard" ><b>Create a Board</b></h3>
                 <form ng-submit="main.createNewBoard()" name="BoaredForm">
                     <div class="input-group">
                         <span class="input-group-btn "><button type="submit" class="btn btn-info">Create</button></span>
@@ -58,19 +48,17 @@
             <!--Chore Boards-->
 
             <div class="col-lg-6">
-                <h1 id="allBoards"><b>All Board's</b></h1>
+                <h1 id="titleAllBoards"><b>All Board's</b></h1>
                 <div class="well" id="choreBoard" ng-repeat="board in main.boards">
-                    <!--clears current board-->
                     <td-todo-board board="board"></td-todo-board>
-                    <button class="btn btn-danger btn-block" ng-click="main.removeBoard(index)">Delete This Board</button>
+                    <button class="btn btn-danger btn-block" ng-click="main.removeBoard($index)">Delete This Board</button>
 
                 </div>
             </div>
             <div class="col-lg-2"></div>
         </div>
-       
-
-                <button ng-click="main.clearAllBroards()" class="btn btn-danger" id="clearAllBtn"><b>Clear All Boards</b></button>
+       <a  ng-click="main.clearAllBroards()"  href="#" id="clearAllLink" role="button">Delete all my Boards</a>
+<!--<button ng-click="main.clearAllBroards()" class="btn btn-danger" id="clearAllBtn"><b>Clear All Boards</b></button>-->
 
           
 
